@@ -19,7 +19,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: url('{{ asset("assets/image.png") }}') no-repeat center center/cover;
+            background: url('{{ asset("assets/img/image.png") }}') no-repeat center center/cover;
         }
 
         h1 {
@@ -39,6 +39,27 @@
             box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
             width: 500px;
             text-align: center;
+            position: relative; /* Ini yang memastikan back-icon tetap di dalam container */
+        }
+
+        .back-icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 35px;
+            text-decoration: none;
+            color:  #2d3a4b;
+            padding: 6px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+        }
+
+        .back-icon:hover {
+            background: rgb(211, 220, 231);
         }
 
         .container h2 {
@@ -169,6 +190,7 @@
 
     <h1>SELAMAT DATANG DI SAGARA TUNGKAL</h1>
     <div class="container">
+    <a href="{{ route('index') }}" class="back-icon">&times;</a>
         <h2>Daftar</h2>
         <form method="POST" action="{{ route('register') }}">
             @csrf
