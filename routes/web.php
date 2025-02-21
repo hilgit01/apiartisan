@@ -4,7 +4,7 @@ use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('authentication.login');
 })->name('login');
 
 Route::get('/dashboard', function () {
@@ -12,5 +12,5 @@ Route::get('/dashboard', function () {
 })->name('index');
 
 Route::get('/register', function () {
-    return view('auth.register');
+    return view('authentication.register');
 })->name('register');
